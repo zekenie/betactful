@@ -16,7 +16,8 @@
         "express-hbs":"latest",
         "passport":"latest",
         "winston":"latest",
-        "express-trace":"0.0.3"
+        "express-trace":"0.0.3",
+        "validator":"latest"
     },
     "devDependencies":{
         "mocha":"latest"

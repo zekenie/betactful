@@ -5,9 +5,9 @@
         "secret": "mysecret"
     },
     "request_timeout":1000,
-    "port":4000,
+    "port":5000,
     "mongodb":{
-        "uri":"mongodb://localhost:27017/express-train"
+        "uri":"mongodb://localhost:27017/doDont"
     },
     "character_encoding":"utf-8"
 }
