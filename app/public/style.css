@@ -146,11 +146,11 @@ a#logo-text:hover {
 }
 
 #tip-list li.do, #dos-list li {
-   background-image: url(images/do.png);
+   background-image: url(/images/do.png);
 }
 
 #tip-list li.dont, #donts-list li {
-   background-image: url(images/dont.png);
+   background-image: url(/images/dont.png);
 }
 
 p.example {
@@ -200,11 +200,11 @@ p.example {
 }
 
 #advice > li#dos {
-   background-image: url(images/dos.png);
+   background-image: url(/images/dos.png);
 }
 
 #advice > li#donts {
-   background-image: url(images/donts.png);
+   background-image: url(/images/donts.png);
 }
 
 #dos-list li, #donts-list li {
@@ -238,11 +238,11 @@ p.example {
 }
 
 .upvote {
-	background-image: url(images/upvote.png);
+	background-image: url(/images/upvote.png);
 }
 
 .downvote {
-	background-image: url(images/downvote.png);
+	background-image: url(/images/downvote.png);
 }
 
 .upvote, .downvote {
