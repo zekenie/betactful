@@ -59,17 +59,15 @@
         <div class="col-md-3">
           <h3 class="footer-heads">Browse Topics</h3>
           <ul id="browse-topics-footer">
-            <li><a href="#">Terminal Illness</a>
-            <li><a href="#">Mental Illness</a>
-            <li><a href="#">PTSD</a>
-            <li><a href="#">Overweight</a>
-            <li><a href="#">Transgender</a>
+            {{#each groups}}
+              <li><a href="/{{urlName}}">{{name}}</a></li>
+            {{/each}}
           </ul>
         </div>
         <div class="col-md-3">
           <h3 class="footer-heads">Submit Tips</h3>
           <br><br><br><br><br><br><br><br>
-          <p><a class="btn btn-primary" href="#" role="button" id="submit-topic">Submit topics</a></p>
+          <p><a class="btn btn-primary" href="/new" role="button" id="submit-topic">Submit topics</a></p>
         </div>
       </div>
     </div> <!-- /container -->
@@ -80,6 +78,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./Jumbotron Template for Bootstrap_files/jquery-1.10.2.min.js"></script>
     <script src="./Jumbotron Template for Bootstrap_files/bootstrap.min.js"></script>
-  
+
 
 <iframe style="position: absolute; width: 1px; height: 1px; top: 0px; left: 0px; visibility: hidden;"></iframe><sfmsg id="sfMsgId" data="{&quot;imageCount&quot;:0,&quot;ip&quot;:&quot;1.1.1.1&quot;}"></sfmsg><span id="sfButtons"></span></body></html>

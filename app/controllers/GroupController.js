@@ -15,7 +15,9 @@ module.exports = function (app,Groups) {
 
     controller.index = [
         //list many groups
-        function(req,res,next) {}
+        function(req,res,next) {
+            res.render('groups/index');
+        }
     ];
 
     controller.view = [
