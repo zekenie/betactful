@@ -6,8 +6,8 @@ module.exports = function (dal) {
         group:{type:Schema.ObjectId,ref:"groups"},
         sug:String,
         text:String,
-        ups:Number,
-        downs:Number,
+        ups:{type:Number,default:0},
+        downs:{type:Number,default:0},
         relationships:[String]
     });
 

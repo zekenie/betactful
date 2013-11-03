@@ -22,7 +22,11 @@ module.exports = function (app,Actions,Groups) {
 
     controller.up = [
     	function(req,res,next) {
-    		req.action.up++;
+    		if(!req.action.ups)
+    			req.action.ups = 0;
+    		console.log(req.action);
+    		++req.action.ups;
+    		console.log(req.action)
     		req.action.save(function(err) {
     			if(err) return next(err);
     			res.send(200);
@@ -32,7 +36,9 @@ module.exports = function (app,Actions,Groups) {
 
     controller.down = [
     	function(req,res,next) {
-    		req.action.down--;
+    		if(!req.action.downs)
+    			req.action.downs = 0;
+    		req.action.downs++;
     		req.action.save(function(err) {
     			if(err) return next(err);
     			res.send(200);

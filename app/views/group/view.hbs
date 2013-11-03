@@ -1,6 +1,10 @@
 {{!< ../layouts/default}}
 <script src="http://underscorejs.org/underscore.js"></script>
-
+<style>
+.voted{
+	color:#007ec6;
+}
+</style>
 <div class="content">
     <div class="container">
     	<div class="row">
@@ -25,10 +29,10 @@
 								<li>
 									<div class="tip">{{text}}</div>
 									<!-- <div class="vote">
-										<a data-id="{{_id}}" href="#" class="upvote"></a>
-										<span class="upvote-count">5</span>
-										<a data-id="{{_id}}" href="#" class="downvote"></a>
-										<span class="downvote-count">2</span>
+										<a data-id="{{_id}}" href="#" class="upvote"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+										<span class="upvote-count">{{ups}}</span>
+										<a data-id="{{_id}}" href="#" class="downvote"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+										<span class="downvote-count">{{downs}}</span>
 									</div> -->
 								</li>
 							{{/each}}
@@ -41,10 +45,10 @@
 								<li>
 									<div class="tip">{{text}}</div>
 									<!-- <div class="vote">
-										<a data-id="{{_id}}" href="#" class="upvote"></a>
-										<span class="upvote-count">6</span>
-										<a data-id="{{_id}}" href="#" class="downvote"></a>
-										<span class="downvote-count">6</span>
+										<a data-id="{{_id}}" href="#" class="upvote"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+										<span class="upvote-count">{{ups}}</span>
+										<a data-id="{{_id}}" href="#" class="downvote"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+										<span class="downvote-count">{{downs}}</span>
 									</div> -->
 								</li>
 							{{/each}}
@@ -77,7 +81,7 @@
 				</form> -->
 			</div>
 		</div>
-	</div><br/>
+	</div></div><br/>
 
 
 <script>
@@ -90,16 +94,18 @@
 	}
 	_.each($(".upvote-count,.downvote-count"),function(el) {
 		el  = $(el);
-		el.text(0);
+		//el.text(0);
 		//el.text(Math.round(Math.random() * 10));
 	});
 	$(".upvote").on('click',function() {
+		$(this).addClass('voted');
 		var sibling = $(this).siblings('.upvote-count');
 		var num = parseInt(sibling.text());
 		sibling.text(num+1);
 		makeReq('up',$(this).attr('data-id'));
 	});
 	$(".downvote").on('click',function() {
+		$(this).addClass('voted');
 		var sibling = $(this).siblings('.downvote-count');
 		var num = parseInt(sibling.text());
 		sibling.text(num+1);

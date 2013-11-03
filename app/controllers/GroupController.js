@@ -20,11 +20,19 @@ module.exports = function (app,Groups) {
         }
     ];
 
+    var filterFn = function(item,which) {
+        return item.sug === which && (item.ups - item.downs) > -5;
+    };
+
     controller.view = [
         function(req,res,next) {
             req.group = req.group.toObject();
-            req.group.dos = _.where(req.group.actions,{sug:'Do'});
-            req.group.donts = _.where(req.group.actions,{sug:"Don't"});
+            req.group.dos = _.filter(req.group.actions,function(item) {
+                return filterFn(item,"Do");
+            });
+            req.group.donts = _.filter(req.group.actions,function(item) {
+                return filterFn(item,"Don't");
+            });
             console.log(req.group);
             res.render('group/view',req.group);
         }
