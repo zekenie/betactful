@@ -6,7 +6,8 @@ module.exports = function (dal) {
         group:{type:Schema.ObjectId,ref:"groups"},
         sug:String,
         text:String,
-        score:Number,
+        ups:Number,
+        downs:Number,
         relationships:[String]
     });
 
@@ -27,10 +28,11 @@ module.exports = function (dal) {
     ActionSchema.post('save',function() {
     	var self = this;
     	mongoose.model('groups').findById(this.group,function(err,group) {
-    		console.log('group is',group);
-    		group.actions.push(self.id);
-    		group.save(function(err) {
-    		});
+    		if(group.actions.indexOf(self.id) === -1) {
+	    		group.actions.push(self.id);
+	    		group.save(function(err) {
+	    		});
+	    	}
     	});
     });
 

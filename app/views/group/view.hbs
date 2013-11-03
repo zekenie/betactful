@@ -22,7 +22,15 @@
 					<li id="dos">
 						<ul id="dos-list">
 							{{#each dos}}
-								<li><div class="tip">{{text}}</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">5</span> <a href="#" class="downvote"></a><span class="downvote-count">2</span></div></li>
+								<li>
+									<div class="tip">{{text}}</div>
+									<div class="vote">
+										<a data-id="{{_id}}" href="#" class="upvote"></a>
+										<span class="upvote-count">5</span>
+										<a data-id="{{_id}}" href="#" class="downvote"></a>
+										<span class="downvote-count">2</span>
+									</div>
+								</li>
 							{{/each}}
 						</ul>
 					</li>
@@ -30,7 +38,15 @@
 						<ul id="donts-list">
 
 							{{#each donts}}
-								<li><div class="tip">{{text}}</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">6</span> <a href="#" class="downvote"></a><span class="downvote-count">6</span></div></li>
+								<li>
+									<div class="tip">{{text}}</div>
+									<div class="vote">
+										<a data-id="{{_id}}" href="#" class="upvote"></a>
+										<span class="upvote-count">6</span>
+										<a data-id="{{_id}}" href="#" class="downvote"></a>
+										<span class="downvote-count">6</span>
+									</div>
+								</li>
 							{{/each}}
 						</ul>
 
@@ -46,7 +62,7 @@
 		<div class="container">
 		<div class="row">
 			<div class="col-md-9">
-				<form class="form-inline" method="post">
+				<!-- <form class="form-inline" method="post">
 					<div class="form-group">
 						<select class="form-control" name="sug">
 							<option></option>>
@@ -58,13 +74,20 @@
 						<input  placeholder="Your suggestion..." class="form-control" name="text" type="text"/>
 					</div>
 					<button class="btn btn-primary">Add</button>
-				</form>
+				</form> -->
 			</div>
 		</div>
 	</div><br/>
 
 
 <script>
+
+	function makeReq(dir,id) {
+		$.ajax({
+			url:window.location.pathname + '/' + id + '/' + dir,
+			method:'post'
+		})
+	}
 	_.each($(".upvote-count,.downvote-count"),function(el) {
 		el  = $(el);
 		el.text(0);
@@ -74,10 +97,12 @@
 		var sibling = $(this).siblings('.upvote-count');
 		var num = parseInt(sibling.text());
 		sibling.text(num+1);
+		makeReq('up',$(this).attr('data-id'));
 	});
 	$(".downvote").on('click',function() {
 		var sibling = $(this).siblings('.downvote-count');
 		var num = parseInt(sibling.text());
 		sibling.text(num+1);
+		makeReq('down',$(this).attr('data-id'));
 	});
 </script>

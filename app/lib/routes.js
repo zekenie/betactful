@@ -18,14 +18,18 @@ module.exports = function (app, GroupController, Groups, ActionController, model
     app.get('/new',GroupController.new); //a form for making a new group
     app.get('/:group',GroupController.view); //list all sugs for specific group
 
+    app.post('/:group/:actionId/up',ActionController.up); //cating upvote or downvote
+    app.post('/:group/:actionId/down',ActionController.down); //cating upvote or downvote
 
     app.post('/:group',ActionController.create); //add action for group
     app.put('/:group/:actionId'); //update action for group
     app.del('/:group/:actionId'); //delete action for group
 
-    app.post('/:group/:actionId/vote',ActionController.vote); //cating upvote or downvote
+
+
 
     app.param('group',GroupController.load);
+    app.param('actionId',ActionController.load);
 
 
 };

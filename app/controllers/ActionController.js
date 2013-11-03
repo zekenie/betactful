@@ -20,9 +20,19 @@ module.exports = function (app,Actions,Groups) {
     	}
     ];
 
-    controller.vote = [
+    controller.up = [
     	function(req,res,next) {
-    		req.action += parseInt(req.body.vote);
+    		req.action.up++;
+    		req.action.save(function(err) {
+    			if(err) return next(err);
+    			res.send(200);
+    		});
+    	}
+    ];
+
+    controller.down = [
+    	function(req,res,next) {
+    		req.action.down--;
     		req.action.save(function(err) {
     			if(err) return next(err);
     			res.send(200);
