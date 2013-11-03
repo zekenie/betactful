@@ -38,12 +38,6 @@
 							{{#each donts}}
 								<li><div class="tip">{{text}}</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">6</span> <a href="#" class="downvote"></a><span class="upvote-count">6</span></div></li>
 							{{/each}}
-							<!-- <li><div class="tip"><strong>Commenting on appearance.</strong> Telling someone they look pale or look like they've lost weight isagood way to make them self-conscious or fearful&mdash;and if it's true, it's probably something they already know.</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">1</span> <a href="#" class="downvote"></a><span class="upvote-count">3</span></div></li>
-							<li><div class="tip"><strong>Sharing war stories.</strong> You may know someone else who has had cancer, but it's a mistake to thijnkeveryone's experience will be the same.</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">7</span> <a href="#" class="downvote"></a><span class="upvote-count">3</span></div></li>
-							<li><div class="tip"><strong>Offering unsolicited advice.</strong> Telling people what to do when they don't ask for help is rarely a goodidea, even if your intentions are the best</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">4</span> <a href="#" class="downvote"></a><span class="upvote-count">1</span></div></li>
-							<li><div class="tip"><strong>Being patronizing or condescending.</strong></div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">3</span> <a href="#" class="downvote"></a><span class="upvote-count">0</span></div></li>
-							<li><div class="tip"><strong>Being afraid to touch.</strong> A hug or touch on the shoulder will help the person willith cancer know you care and that you accept him or her.</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">8</span> <a href="#" class="downvote"></a><span class="upvote-count">2</span></div></li>
-							<li><div class="tip"><strong>Being ashamed of your own fears or uneasiness.</strong></div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">4</span> <a href="#" class="downvote"></a><span class="upvote-count">1</span></div></li> -->
 						</ul>
 
 
@@ -74,3 +68,21 @@
 			</div>
 		</div>
 	</div><br/>
+
+
+<script>
+	$(".upvote-count,.downvote-count").forEach(function(el) {
+		el  = $(el);
+		el.text(Math.round(Math.random() * 10));
+	});
+	$(".upvote").on('click',function() {
+		var sibling = $(this).siblings('.upvote-count');
+		var num = parseInt(sibling.text());
+		sibling.text(num+1);
+	});
+	$(".downvote").on('click',function() {
+		var sibling = $(this).siblings('.downvote-count');
+		var num = parseInt(sibling.text());
+		sibling.text(num+1);
+	});
+</script>
