@@ -200,11 +200,11 @@ p.example {
 }
 
 #advice > li#dos {
-   background-image: url(/images/dos.png);
+   background-image: url(/images/Dos.png);
 }
 
 #advice > li#donts {
-   background-image: url(/images/donts.png);
+   background-image: url(/images/Donts.png);
 }
 
 #dos-list li, #donts-list li {
