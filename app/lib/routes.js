@@ -9,6 +9,10 @@ module.exports = function (app, GroupController, Groups, ActionController, model
         });
     });
 
+    app.get('/about',function(req,res) {
+        res.render("about");
+    });
+
     app.get('/',GroupController.index);
     app.post('/create',GroupController.create);   // making a new group
     app.get('/new',GroupController.new); //a form for making a new group
