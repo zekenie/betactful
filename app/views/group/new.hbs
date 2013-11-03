@@ -3,12 +3,23 @@
 
 <div class="content">
     <div class="container">
-        <div class="page-header">
-            <h1>Create New Group</h1>
-        </div>
-        <form method="post" action="/create">
-            <input type="text" placeholder="group name" name="name"/>
-            <input type="submit" class="btn" value="Add" />
-        </form>
+    	<div class="row">
+    		<div class="col-md-9">
+		        <div class="page-header">
+		            <h1>Create New Topic</h1>
+		        </div>
+		        <form method="post" action="/create">
+		        	<div class="form-group">
+		        		<label for="name">When someone you know...</label>
+			            <input class="form-control" type="text" placeholder="Eg has cancer..." autofocus name="name"/>
+			        </div>
+			        <div class="form-group">
+			        	<label for="intro">Intro</label>
+			        	<textarea class="form-control" name="intro" placeholder="A few words to describe the situation..."></textarea>
+			        </div>
+		            <input type="submit" class="btn btn-success pull-right" value="Add" />
+		        </form>
+		    </div>
+	    </div>
     </div>
 </div>

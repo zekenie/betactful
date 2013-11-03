@@ -5,7 +5,8 @@ module.exports = function (dal) {
     var GroupSchema = new mongoose.Schema({
         name:{ type:String, required:true, unique:true },
         urlName:String,
-        actions:[{type:Schema.ObjectId,ref:"actions"}]
+        actions:[{type:Schema.ObjectId,ref:"actions"}],
+        intro:String
     });
 
     GroupSchema.pre('remove',function(next) {

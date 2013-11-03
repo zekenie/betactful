@@ -15,7 +15,7 @@ module.exports = function (app,Actions,Groups) {
     	function(req,res,next) {
     		req.body.group = req.group.id;
     		Actions.create(req.body,function(err,action) {
-    			res.redirect('/' + group.urlName);
+    			res.redirect('/' + req.group.urlName);
     		});
     	}
     ];

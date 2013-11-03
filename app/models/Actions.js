@@ -24,12 +24,12 @@ module.exports = function (dal) {
     	});
     });
 
-    ActionSchema.post('create',function(next) {
+    ActionSchema.post('save',function() {
     	var self = this;
     	mongoose.model('groups').findById(this.group,function(err,group) {
+    		console.log('group is',group);
     		group.actions.push(self.id);
     		group.save(function(err) {
-    			next();
     		});
     	});
     });

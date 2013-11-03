@@ -17,7 +17,8 @@
         "passport":"latest",
         "winston":"latest",
         "express-trace":"0.0.3",
-        "validator":"latest"
+        "validator":"latest",
+        "lodash":"*"
     },
     "devDependencies":{
         "mocha":"latest"

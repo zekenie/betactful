@@ -1,11 +1,11 @@
 var validator = require('validator');
-
+var _ = require('lodash');
 
 module.exports = function (app,Groups) {
     var controller = {};
 
     controller.load = function(req,res,next,id) {
-        Groups.findOne({name:id}).populate('actions').exec(function(err,group) {
+        Groups.findOne({urlName:id}).populate('actions').exec(function(err,group) {
             if(err) return next(err);
             if(!group) return res.send(404);
             req.group = group;
@@ -20,7 +20,11 @@ module.exports = function (app,Groups) {
 
     controller.view = [
         function(req,res,next) {
-            res.json(req.group);
+            req.group = req.group.toObject();
+            req.group.dos = _.where(req.group.actions,{sug:'Do'});
+            req.group.donts = _.where(req.group.actions,{sug:"Don't"});
+            console.log(req.group);
+            res.render('group/view',req.group);
         }
     ];
 
@@ -35,7 +39,7 @@ module.exports = function (app,Groups) {
         //if not create it
         function(req,res,next) {
             //make
-            req.body.urlName = req.body.urlName.replace(/[\s+\/+\&+]/g, '_');
+            req.body.urlName = req.body.name.replace(/[\s+\/+\&+]/g, '_');
             next();
         },
         function(req,res,next) {

@@ -1,6 +1,14 @@
 //var resource = require('express-resource');
 
-module.exports = function (app, GroupController, ActionController, models) {
+module.exports = function (app, GroupController, Groups, ActionController, models) {
+
+    app.get("*",function(req,res,next) {
+        Groups.find({},function(err,groups) {
+            res.locals.groups = groups;
+            next();
+        });
+    });
+
     app.get('/',GroupController.index);
     app.post('/create',GroupController.create);   // making a new group
     app.get('/new',GroupController.new); //a form for making a new group

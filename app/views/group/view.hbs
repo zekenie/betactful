@@ -1,0 +1,75 @@
+{{!< ../layouts/default}}
+
+
+<div class="content">
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-9">
+		        <div class="page-header">
+		            <h1>{{name}}</h1>
+		        </div>
+		        <p>{{intro}}</p>
+		    </div>
+	    </div>
+    </div><br/><br/>
+
+
+
+    <div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<ul id="advice">
+					<li id="dos">
+						<ul id="dos-list">
+							<!-- <li><div class="tip"><strong>Acknowledge the situation.</strong> Example: "I know this must be hard for you."</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">5</span> <a href="#" class="downvote"></a><span class="upvote-count">2</span></div></li>
+							<li><div class="tip"><strong>Express concern.</strong> Example: I'm sorry to hear that you're going through this.</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">9</span> <a href="#" class="downvote"></a><span class="upvote-count">1</span></div></li>
+							<li><div class="tip"><strong>Offer to listen.</strong> Example: "If you would like to talk about it, I am here."</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">4</span> <a href="#" class="downvote"></a><span class="upvote-count">5</span></div></li>
+							<li><div class="tip"><strong>Offer assistance</strong> Example: "Please let me know if I can help."</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">5</span> <a href="#" class="downvote"></a><span class="upvote-count">6</span></div></li>
+							<li><div class="tip"><strong>Be open with your feelings.</strong>Example: "I'm not sure what to say, but I want you to know I care."</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">7</span> <a href="#" class="downvote"></a><span class="upvote-count">0</span></div></li>
+							<li><div class="tip"><strong>Ask how the personfeels.</strong> (Rather than assuming you know how the person feels on any given day.) Example: "How are you doing?"</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">2</span> <a href="#" class="downvote"></a><span class="upvote-count">3</span></div></li> -->
+							{{#each dos}}
+								<li><div class="tip">{{text}}</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">5</span> <a href="#" class="downvote"></a><span class="upvote-count">2</span></div></li>
+							{{/each}}
+						</ul>
+					</li>
+					<li id="donts">
+						<ul id="donts-list">
+
+							{{#each donts}}
+								<li><div class="tip">{{text}}</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">6</span> <a href="#" class="downvote"></a><span class="upvote-count">6</span></div></li>
+							{{/each}}
+							<!-- <li><div class="tip"><strong>Commenting on appearance.</strong> Telling someone they look pale or look like they've lost weight isagood way to make them self-conscious or fearful&mdash;and if it's true, it's probably something they already know.</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">1</span> <a href="#" class="downvote"></a><span class="upvote-count">3</span></div></li>
+							<li><div class="tip"><strong>Sharing war stories.</strong> You may know someone else who has had cancer, but it's a mistake to thijnkeveryone's experience will be the same.</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">7</span> <a href="#" class="downvote"></a><span class="upvote-count">3</span></div></li>
+							<li><div class="tip"><strong>Offering unsolicited advice.</strong> Telling people what to do when they don't ask for help is rarely a goodidea, even if your intentions are the best</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">4</span> <a href="#" class="downvote"></a><span class="upvote-count">1</span></div></li>
+							<li><div class="tip"><strong>Being patronizing or condescending.</strong></div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">3</span> <a href="#" class="downvote"></a><span class="upvote-count">0</span></div></li>
+							<li><div class="tip"><strong>Being afraid to touch.</strong> A hug or touch on the shoulder will help the person willith cancer know you care and that you accept him or her.</div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">8</span> <a href="#" class="downvote"></a><span class="upvote-count">2</span></div></li>
+							<li><div class="tip"><strong>Being ashamed of your own fears or uneasiness.</strong></div><div class="vote"><a href="#" class="upvote"></a><span class="upvote-count">4</span> <a href="#" class="downvote"></a><span class="upvote-count">1</span></div></li> -->
+						</ul>
+
+
+					</li>
+				</ul>
+			</div><br/><br/>
+
+
+
+</div>
+<br/><br/><br/>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<form class="form-inline" method="post">
+					<div class="form-group">
+						<select class="form-control" name="sug">
+							<option>Do</option>
+							<option>Don't</option>
+						</select>
+					</div>
+					<div class="form-group" style="width:81.5%">
+						<input  placeholder="Your suggestion..." class="form-control" name="text" type="text"/>
+					</div>
+					<button class="btn btn-primary">Add</button>
+				</form>
+			</div>
+		</div>
+	</div><br/>

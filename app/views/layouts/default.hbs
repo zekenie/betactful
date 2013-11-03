@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{title}}</title>
-    {{> css}}
-    {{> scripts}}
+	<title>Jumbotron Template for Bootstrap</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+
+	<link href="style.css" rel="stylesheet">
+	<style>
+
+	</style>
 </head>
 <body>
+	<div id="header">
+		<div class="container">
+			<div class="row" id="banner">
+				<div class="col-md-6">
+					<h1>Tactful</h1>
+				</div>
+				<div class="col-md-3">
+					<div class="dropdown">
+						<a class="btn btn-default btn-lg dropdown-toggle" role="button" id="dropdown" data-toggle="dropdown">
+							<span id="browse-topics">Browse Topics</span>
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+								{{#each groups}}
+									<li><a href="/{{urlName}}">{{name}}</a></li>
+								{{/each}}
+							</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {{{body}}}
+<div style="text-align:center">Don't see a topic you're looking for? <a href="/new">Add a new topic</a>.</div>
 </body>
 </html>
