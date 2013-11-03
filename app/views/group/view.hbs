@@ -1,5 +1,5 @@
 {{!< ../layouts/default}}
-
+<script src="http://underscorejs.org/underscore.js"></script>
 
 <div class="content">
     <div class="container">
@@ -65,7 +65,7 @@
 
 
 <script>
-	$(".upvote-count,.downvote-count").forEach(function(el) {
+	_.each($(".upvote-count,.downvote-count"),function(el) {
 		el  = $(el);
 		el.text(Math.round(Math.random() * 10));
 	});
