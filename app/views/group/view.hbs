@@ -67,7 +67,8 @@
 <script>
 	_.each($(".upvote-count,.downvote-count"),function(el) {
 		el  = $(el);
-		el.text(Math.round(Math.random() * 10));
+		el.text(0);
+		//el.text(Math.round(Math.random() * 10));
 	});
 	$(".upvote").on('click',function() {
 		var sibling = $(this).siblings('.upvote-count');
