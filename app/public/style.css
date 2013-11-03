@@ -1,7 +1,57 @@
-/* Does this show up?*/
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic|Podkova:400,700);
 
-body {
-  padding-bottom: 20px;
+body * {
+    font-family: "Source Sans Pro", "Helvetica Neue", Lucida, Verdana, Helvetica, Arial, sans-serif !important;
+}
+
+#banner {
+	height: 120px;
+}
+
+a#logo-text {
+	color: #fff !important;
+	font-weight: 700 !important;
+	font-family: "Podkova" !important;
+	font-size: 72px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+a#logo-text:hover {
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#tagline {
+	color: #fff !important;
+	position: relative;
+	top: -23px;
+	font-size: 24px;
+	font-weight: 400;
+}
+#tagline:hover {
+	color: #fff !important;
+}
+
+#footer {
+	padding-bottom:40px;
+	background-color: #DEEEF8;
+	font-size: 14px;
+	border-top: 5px solid #007EC6;
+	margin-top: 20px;
+}
+
+#footer div {
+	margin-top: 5px;
+}
+
+#footer-links {
+	float:right;
+}
+
+#footer-links a {
+	margin-left:15px;
 }
 
 .row {
@@ -18,7 +68,7 @@ body {
     background-color: #007EC6;
 }
 
-#dropdown .caret {
+#dropdown .caret,#dropdown2 .caret {
 	border-top-color: #fff;
 }
 
@@ -44,14 +94,14 @@ body {
 	padding-left: 16px !important;
 }
 
-#dropdown {
-	margin-top: 12px;
+#dropdown,#dropdown2 {
+	margin-top: 40px;
 	margin-right: 3px;
 	background-color: #94C9E7;
 	width: 160px;
 }
 
-#dropdown:hover {
+#dropdown:hover,#dropdown2:hover {
 	background-color: #8CBBD5;
 }
 
@@ -70,7 +120,7 @@ body {
 	font-size: 24px;
 }
 
-#relationship, #group {
+/* OUT OF IT FOR NOW #relationship, */ #group {
 	background-color: #fff;
 	color: #00A99D;
 	padding: 5px;
@@ -96,11 +146,11 @@ body {
 }
 
 #tip-list li.do, #dos-list li {
-   background-image: url(/images/do.png);
+   background-image: url(images/do.png);
 }
 
 #tip-list li.dont, #donts-list li {
-   background-image: url(/images/dont.png);
+   background-image: url(images/dont.png);
 }
 
 p.example {
@@ -150,11 +200,11 @@ p.example {
 }
 
 #advice > li#dos {
-   background-image: url(/images/Dos.png);
+   background-image: url(images/dos.png);
 }
 
 #advice > li#donts {
-   background-image: url(/images/Donts.png);
+   background-image: url(images/donts.png);
 }
 
 #dos-list li, #donts-list li {
@@ -188,11 +238,11 @@ p.example {
 }
 
 .upvote {
-	background-image: url(/images/upvote.png);
+	background-image: url(images/upvote.png);
 }
 
 .downvote {
-	background-image: url(/images/downvote.png);
+	background-image: url(images/downvote.png);
 }
 
 .upvote, .downvote {
