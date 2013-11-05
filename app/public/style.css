@@ -8,7 +8,26 @@ body {
 	height: 120px;
 }
 
+#beta {
+	display: inline-block;
+	background-image: url(/images/cloud.png);
+	background-repeat: no-repeat;
+	width: 67px;
+	height: 51px;
+	margin-left: 10px;
+	position: relative;
+}
+
+#beta strong {
+	position: absolute;
+	left:14px;
+	top: 12px;
+	color: #007EC6;
+	font-size: 20px;
+}
+
 a#logo-text {
+	display: inline-block;
 	color: #fff !important;
 	font-weight: 700 !important;
 	font-family: "Podkova" !important;
