@@ -34,6 +34,7 @@ a#logo-text {
 	font-size: 72px;
 	margin-bottom: 0px;
 	margin-top: 0px;
+	height: 75px;
 }
 
 a#logo-text:hover {
@@ -44,8 +45,6 @@ a#logo-text:hover {
 
 #tagline {
 	color: #fff !important;
-	position: relative;
-	top: -23px;
 	font-size: 24px;
 	font-weight: 400;
 }
@@ -216,6 +215,8 @@ p.example {
 	padding-top: 8px;
 	background-repeat: no-repeat;
 	padding-left: 84px;
+	min-height: 76px;
+	margin-bottom: 40px;
 }
 
 #advice > li#dos {
@@ -236,10 +237,6 @@ p.example {
 
 #dos-list, #donts-list {
 	padding-left: 4px;
-}
-
-#advice > li:not(:last-child)  {
-	padding-bottom: 40px;
 }
 
 .tip {
